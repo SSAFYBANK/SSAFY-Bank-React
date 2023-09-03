@@ -1,8 +1,11 @@
 /* Import */
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "@emotion/styled";
 import Theme from "@assets/styles/Theme";
 import useRouter from "@hooks/useRouter";
 import Header from "@components/header/Header";
+import axios from "axios";
 import Footer from "@components/footer/Footer";
 
 // ----------------------------------------------------------------------------------------------------
@@ -15,9 +18,38 @@ const { primary } = Theme.colors;
 /* Login Page */
 function Login() {
     const { routeTo } = useRouter();
+    const location = useLocation();
+
+    const authenticateUser = (code: string) => {
+        axios
+            .post("http://localhost:8081/auth/login", { code })
+            .then((response) => {
+                console.log(response.data);
+                const authToken = response.headers["authorization"];
+                if (authToken) {
+                    sessionStorage.setItem("Authorization", authToken);
+                }
+                window.location.href = "http://localhost:5173";
+            })
+            .catch((error) => {
+                console.log("Error:", error);
+            });
+    };
+
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const code = params.get("code");
+        console.log(code);
+
+        // If code exists, authenticate the user
+        if (code) {
+            authenticateUser(code);
+        }
+    }, [location]);
 
     const handleLoginClick = () => {
-        routeTo("/signup");
+        window.location.href =
+            "https://kauth.kakao.com/oauth/authorize?client_id=e96444e9bce9fc9c391e1db8825252eb&redirect_uri=http://localhost:5173/login&response_type=code";
     };
 
     return (
