@@ -38,12 +38,10 @@ const HeaderContainer = styled("div")`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    z-index: 30;
     top: 0;
     left: 0;
     width: 100%;
-    height: 10%;
+    height: 10vh;
     background-color: ${primarydark};
 `;
 
@@ -60,7 +58,7 @@ const Logo = styled("img")`
 const NavigationBar = styled("nav")`
     display: flex;
     justify-content: space-between;
-    width: 45%;
+    width: 50%;
     height: 100%;
     margin-right: 2em;
 `;
@@ -71,6 +69,7 @@ const MenuButton = styled("div")`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: relative;
     width: 25%;
     height: 100%;
     min-width: 100px;

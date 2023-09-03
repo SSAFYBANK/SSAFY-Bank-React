@@ -8,6 +8,7 @@ type Theme = {
         secondary: string;
         tertiary: string;
         faintgray: string;
+        distinctgray: string;
     };
 };
 
@@ -20,6 +21,7 @@ const theme: Theme = {
         secondary: "#11F5B5",
         tertiary: "#12FEFF",
         faintgray: "#CCCDCF",
+        distinctgray: "#392F31",
     },
 };
 
