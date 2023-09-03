@@ -7,7 +7,7 @@ import Footer from "@components/footer/Footer";
 // ----------------------------------------------------------------------------------------------------
 
 /* Variables */
-const { tertiary, distinctgray } = Theme.colors;
+const { secondary, distinctgray } = Theme.colors;
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ const TitleBox = styled("div")`
     align-items: center;
     width: 100%;
     height: 25vh;
-    background-color: ${tertiary};
+    background-color: ${secondary};
     color: ${distinctgray};
 `;
 

@@ -10,6 +10,7 @@ type Theme = {
         whitegray: string;
         faintgray: string;
         distinctgray: string;
+        kakaotalk: string;
     };
 };
 
@@ -24,6 +25,7 @@ const theme: Theme = {
         whitegray: "#F2F2F2",
         faintgray: "#CCCDCF",
         distinctgray: "#392F31",
+        kakaotalk: "#FAE100",
     },
 };
 

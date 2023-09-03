@@ -4,7 +4,7 @@ import Theme from "@assets/styles/Theme";
 import Header from "@components/header/Header";
 import Footer from "@components/footer/Footer";
 import Table from "@components/table/Table";
-import { TableProps } from "@customTypes/TableProps";
+import { TableProps } from "@/customTypes/PropsTypes";
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -21,6 +21,7 @@ const serviceList: TableProps = {
         ["은행 전체 목록", "모든 은행 목록 조회"],
     ],
 };
+
 // ----------------------------------------------------------------------------------------------------
 
 /* Home Page */
