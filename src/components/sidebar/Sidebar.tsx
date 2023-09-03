@@ -2,8 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 import useRouter from "@hooks/useRouter";
 import { useState } from "react";
-import Theme from "@assets/styles/Theme";
-import LogoImage from "@assets/images/Service-Logo-White.png";
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -17,82 +15,175 @@ const Sidebar = React.memo(() => {
     const [activeMenu, setActiveMenu] = useState("");
     const [activeBigMenu, setBigActiveMenu] = useState("");
 
+    // 대분류 메뉴를 클릭했을 때 해당 대분류에 속한 소분류 메뉴를 열거나 닫을 수 있도록 설정
+    const toggleSubMenu = (menu) => {
+        if (activeBigMenu === menu) {
+            setBigActiveMenu(""); // 이미 열려 있는 대분류 메뉴를 다시 클릭하면 닫음
+        } else {
+            setBigActiveMenu(menu); 
+        }
+    };
     return (
-        <SidebarContainer>
-            <MenuButton
-                active={activeBigMenu === "/login"}
-                onClick={() => {
-                    setBigActiveMenu("/login");
-                    //   routeTo("/login");
-                }}
-            >
-                로그인
-            </MenuButton>
-            <SmallWrap show={activeBigMenu === "/login"}>
-                <SmallContent
-                    active={activeMenu === "/login"}
-                    onClick={() => {
-                        setActiveMenu("/login");
-                        routeTo("/login");
-                    }}
+            <SidebarContainer>
+                <MenuButton
+                    active={activeBigMenu === "/login"}
+                    onClick={() => toggleSubMenu("/login")}
                 >
-                    dd
-                </SmallContent>
-                <SmallContent
-                    active={activeMenu === "/login"}
-                    onClick={() => {
-                        setActiveMenu("/login");
-                        routeTo("/login");
-                    }}
+                예금주 관리
+                </MenuButton>
+                <SmallWrap show={activeBigMenu === "/login"}>
+                    <SmallContent
+                        active={activeMenu === "/login"}
+                        onClick={() => {
+                            setActiveMenu("/login");
+                            routeTo("/login");
+                        }}
+                    >
+                        예금주 생성
+                    </SmallContent>
+                    <SmallContent
+                        active={activeMenu === "/login"}
+                        onClick={() => {
+                            setActiveMenu("/login");
+                            routeTo("/login");
+                        }}
+                    >
+                        예금주 전체 조회
+                    </SmallContent>
+                    <SmallContent
+                        active={activeMenu === "/login"}
+                        onClick={() => {
+                            setActiveMenu("/login");
+                            routeTo("/login");
+                        }}
+                    >
+                        예금주 삭제
+                    </SmallContent>
+                </SmallWrap>
+                <MenuButton
+                    active={activeBigMenu === "/"}
+                    onClick={() => toggleSubMenu("/")} 
                 >
-                    dd
-                </SmallContent>
-                <SmallContent
-                    active={activeMenu === "/login"}
-                    onClick={() => {
-                        setActiveMenu("/login");
-                        routeTo("/login");
-                    }}
-                >
-                    dd
-                </SmallContent>
-                <SmallContent
-                    active={activeMenu === "/login"}
-                    onClick={() => {
-                        setActiveMenu("/login");
-                        routeTo("/login");
-                    }}
-                >
-                    dd
-                </SmallContent>
-            </SmallWrap>
-            <MenuButton
-                active={activeMenu === "/"}
-                onClick={() => {
-                    setActiveMenu("/");
-                    routeTo("/");
-                }}
-            >
-                서비스 소개
-            </MenuButton>
-            <MenuButton
-                active={activeMenu === "/service"}
-                onClick={() => {
-                    setActiveMenu("/service");
-                    routeTo("/service");
-                }}
-            >
-                API 소개
-            </MenuButton>
-            <MenuButton
-                active={activeMenu === "/info"}
-                onClick={() => {
-                    setActiveMenu("/info");
-                    routeTo("/info");
-                }}
-            >
-                나의 API
-            </MenuButton>
+                    계좌 관리
+                </MenuButton>
+                <SmallWrap show={activeBigMenu === "/"}>
+                    <SmallContent
+                        active={activeMenu === "/"}
+                        onClick={() => {
+                            setActiveMenu("/");
+                            routeTo("/");
+                        }}
+                    >
+                        계좌 등록
+                    </SmallContent>
+                    <SmallContent
+                        active={activeMenu === "/"}
+                        onClick={() => {
+                            setActiveMenu("/");
+                            routeTo("/");
+                        }}
+                    >
+                        계좌 삭제
+                    </SmallContent>
+                    <SmallContent
+                        active={activeMenu === "/"}
+                        onClick={() => {
+                            setActiveMenu("/");
+                            routeTo("/");
+                        }}
+                    >
+                        계좌 비밀번호 찾기
+                    </SmallContent>
+                    <SmallContent
+                        active={activeMenu === "/"}
+                        onClick={() => {
+                            setActiveMenu("/");
+                            routeTo("/");
+                        }}
+                    >
+                        계좌 잔액 조회
+                    </SmallContent>
+                    <SmallContent
+                        active={activeMenu === "/"}
+                        onClick={() => {
+                            setActiveMenu("/");
+                            routeTo("/");
+                        }}
+                    >
+                        사용자별 계좌 목록 조회
+                    </SmallContent>
+                    <SmallContent
+                        active={activeMenu === "/"}
+                        onClick={() => {
+                            setActiveMenu("/");
+                            routeTo("/");
+                        }}
+                    >
+                        예금주별 계좌 목록 조회
+                    </SmallContent>
+                </SmallWrap>
+                <MenuButton
+    active={activeMenu === "/service"}
+    onClick={() => toggleSubMenu("/service")} 
+>
+    계좌 이체 관리
+</MenuButton>
+<SmallWrap show={activeBigMenu === "/service"}>
+    <SmallContent
+        active={activeMenu === "/service"}
+        onClick={() => {
+            setActiveMenu("/service");
+            routeTo("/service");
+        }}
+    >
+        계좌 이체
+    </SmallContent>
+    <SmallContent
+        active={activeMenu === "/service"}
+        onClick={() => {
+            setActiveMenu("/service");
+            routeTo("/service");
+        }}
+    >
+        이체 내역 조회
+    </SmallContent>
+    <SmallContent
+        active={activeMenu === "/service"}
+        onClick={() => {
+            setActiveMenu("/service");
+            routeTo("/service");
+        }}
+    >
+        이체 내역 삭제
+    </SmallContent>
+</SmallWrap>
+<MenuButton
+    active={activeMenu === "/financial"}
+    onClick={() => toggleSubMenu("/financial")}
+>
+    금융 정보
+</MenuButton>
+<SmallWrap show={activeBigMenu === "/financial"}>
+    <SmallContent
+        active={activeMenu === "/financial"}
+        onClick={() => {
+            setActiveMenu("/financial");
+            routeTo("/financial");
+        }}
+    >
+        은행 전체 목록
+    </SmallContent>
+    <SmallContent
+        active={activeMenu === "/financial"}
+        onClick={() => {
+            setActiveMenu("/financial");
+            routeTo("/financial");
+        }}
+    >
+        환율 조회
+    </SmallContent>
+</SmallWrap>
+
         </SidebarContainer>
     );
 });
@@ -101,9 +192,10 @@ const SidebarContainer = styled("div")`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 35vh;
+    width: 40vh;
     height: 100vh;
     background-color: #eeeeee;
+    overflow-y: auto; // 스크롤바를 표시할 수 있도록 설정
     // margin-left: 150px;
 `;
 
@@ -145,7 +237,7 @@ const SmallContent = styled("div")<{ active: boolean }>`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    width: 25%;
+    padding-bottom: 10px;
     min-width: 100px;
     color: #777777;
     font-size: 15px;
