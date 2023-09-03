@@ -10,10 +10,10 @@ import Theme from "@assets/styles/Theme";
 
 /* Main Page */
 ReactDOM.createRoot(document.getElementById("root")!).render(
-    <React.StrictMode>
+   // <React.StrictMode>
         <ThemeProvider theme={Theme}>
             <Global styles={GlobalStyle} />
             <App />
         </ThemeProvider>
-    </React.StrictMode>,
+  //  </React.StrictMode>,
 );

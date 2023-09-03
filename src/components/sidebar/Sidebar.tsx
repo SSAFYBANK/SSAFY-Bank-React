@@ -2,8 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import useRouter from "@hooks/useRouter";
 import { useState } from "react";
-import Theme from "@assets/styles/Theme";
-import LogoImage from "@assets/images/Service-Logo-White.png";
+//import Theme from "@assets/styles/Theme";
+//import LogoImage from "@assets/images/Service-Logo-White.png";
 
 // ----------------------------------------------------------------------------------------------------
 
