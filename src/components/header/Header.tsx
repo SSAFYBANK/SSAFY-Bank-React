@@ -15,6 +15,21 @@ const { tertiary, primarydark } = Theme.colors;
 /* Header Component */
 const Header = React.memo(() => {
     const { routeTo } = useRouter();
+    const authToken = sessionStorage.getItem("Authorization");
+
+    // Execute Logout
+    const handleLogout = () => {
+        sessionStorage.removeItem("Authorization");
+        routeTo("/");
+    };
+
+    const handleMyApiClick = () => {
+        if (authToken) {
+            routeTo("/info");
+        } else {
+            routeTo("/login");
+        }
+    };
 
     return (
         <HeaderContainer>
@@ -22,10 +37,14 @@ const Header = React.memo(() => {
                 <Logo src={LogoImage} alt="싸피뱅크 로고" onClick={() => routeTo("/")} />
             </LogoWrapper>
             <NavigationBar>
-                <MenuButton onClick={() => routeTo("/login")}>로그인</MenuButton>
+                {authToken ? (
+                    <MenuButton onClick={handleLogout}>로그아웃</MenuButton>
+                ) : (
+                    <MenuButton onClick={() => routeTo("/login")}>로그인</MenuButton>
+                )}
                 <MenuButton onClick={() => routeTo("/")}>서비스 소개</MenuButton>
                 <MenuButton onClick={() => routeTo("/service")}>API 소개</MenuButton>
-                <MenuButton onClick={() => routeTo("/info")}>나의 API</MenuButton>
+                <MenuButton onClick={handleMyApiClick}>나의 API</MenuButton>
             </NavigationBar>
         </HeaderContainer>
     );

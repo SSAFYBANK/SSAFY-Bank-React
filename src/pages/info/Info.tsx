@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import Theme from "@assets/styles/Theme";
 import Header from "@components/header/Header";
 import Footer from "@components/footer/Footer";
+import InfoKey from "@components/info/InfoKey";
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -20,7 +21,7 @@ function Info() {
                 <TitleWrapper>나의 API</TitleWrapper>
                 <DescWrapper>내가 이용 중인 API를 확인하고 설정을 관리할 수 있습니다.</DescWrapper>
             </TitleBox>
-            <div>마이 페이지입니다.</div>
+            <InfoKey />
             <Footer />
         </InfoContainer>
     );

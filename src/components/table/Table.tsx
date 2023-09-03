@@ -1,7 +1,7 @@
 /* Import */
 import styled from "@emotion/styled";
 import Theme from "@assets/styles/Theme";
-import { TableProps } from "@customTypes/TableProps";
+import { TableProps } from "@/customTypes/PropsTypes";
 
 // ----------------------------------------------------------------------------------------------------
 
