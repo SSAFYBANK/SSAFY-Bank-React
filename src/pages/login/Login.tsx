@@ -16,7 +16,7 @@ const { primary } = Theme.colors;
 function Login() {
     const { routeTo } = useRouter();
 
-    const handleSignUpClick = () => {
+    const handleLoginClick = () => {
         routeTo("/signup");
     };
 
@@ -27,7 +27,9 @@ function Login() {
                 <TitleWrapper>로그인</TitleWrapper>
                 <DescWrapper>SSAFY Bank 오픈 API를 이용하기 위해 로그인하세요.</DescWrapper>
             </TitleBox>
-            <LoginBox></LoginBox>
+            <LoginBox>
+                <LoginButton onClick={handleLoginClick}>카카오톡 로그인</LoginButton>
+            </LoginBox>
             <Footer />
         </LoginContainer>
     );
@@ -78,6 +80,8 @@ const LoginBox = styled("div")`
     border-radius: 20px;
     gap: 25px;
 `;
+
+const LoginButton = styled("button")``;
 
 // ----------------------------------------------------------------------------------------------------
 
