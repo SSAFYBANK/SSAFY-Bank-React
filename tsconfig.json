@@ -12,6 +12,7 @@
             "@/*": ["src/*"],
             "@assets/*": ["src/assets/*"],
             "@components/*": ["src/components/*"],
+            "@customTypes/*": ["src/customTypes/*"],
             "@hooks/*": ["src/hooks/*"],
             "@pages/*": ["src/pages/*"]
         },
