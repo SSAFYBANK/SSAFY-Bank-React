@@ -2,8 +2,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import useRouter from "@hooks/useRouter";
-import Theme from "@/assets/styles/Theme";
-import LogoImage from "@assets/images/Service-Logo.png";
+import Theme from "@assets/styles/Theme";
+import LogoImage from "@assets/images/Service-Logo-White.png";
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -38,13 +38,13 @@ const HeaderContainer = styled("div")`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 10%;
     background-color: ${primarydark};
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
 `;
 
 const LogoWrapper = styled("div")`

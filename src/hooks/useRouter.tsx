@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 // ----------------------------------------------------------------------------------------------------
 
-/* Using Router Hook */
+/* Router Hook */
 interface Router {
     routeTo: (path: string) => void;
 }
