@@ -8,7 +8,7 @@ function AccountList() {
       <AccountListDetailContent>
         <ul>
           <ListItem>
-            <BulletPoint>&#9679;</BulletPoint> 기능 : 비밀번호 찾기
+            <BulletPoint>&#9679;</BulletPoint> 기능 : 계좌비밀번호 찾기
           </ListItem>
           <ListItem>
             <BulletPoint>&#9679;</BulletPoint> 메서드 : POST

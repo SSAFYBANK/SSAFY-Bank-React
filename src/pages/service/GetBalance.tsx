@@ -8,7 +8,7 @@ function AccountList() {
       <AccountListDetailContent>
         <ul>
           <ListItem>
-            <BulletPoint>&#9679;</BulletPoint> 기능 : 잔액 조회
+            <BulletPoint>&#9679;</BulletPoint> 기능 : 계좌 잔액 조회
           </ListItem>
           <ListItem>
             <BulletPoint>&#9679;</BulletPoint> 메서드 : POST

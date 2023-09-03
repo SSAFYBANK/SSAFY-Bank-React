@@ -3,12 +3,12 @@ import styled from "@emotion/styled";
 function AccountList() {
   return (
     <AccountListContainer>
-      <AccountListTitle>거래내역 삭제하기</AccountListTitle>
+      <AccountListTitle>이체내역 삭제</AccountListTitle>
       <AccountListDetail>기본 정보</AccountListDetail>
       <AccountListDetailContent>
         <ul>
           <ListItem>
-            <BulletPoint>&#9679;</BulletPoint> 기능 : 거래내역 삭제
+            <BulletPoint>&#9679;</BulletPoint> 기능 : 이체내역 삭제
           </ListItem>
           <ListItem>
             <BulletPoint>&#9679;</BulletPoint> 메서드 : HTTPS-DELETE

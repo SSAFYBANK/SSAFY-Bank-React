@@ -3,12 +3,12 @@ import styled from "@emotion/styled";
 function AccountList() {
   return (
     <AccountListContainer>
-      <AccountListTitle>예금주별 전체 계좌목록 조회수정해야함</AccountListTitle>
+      <AccountListTitle>예금주별 계좌 목록 조회</AccountListTitle>
       <AccountListDetail>기본 정보</AccountListDetail>
       <AccountListDetailContent>
         <ul>
           <ListItem>
-            <BulletPoint>&#9679;</BulletPoint> 기능 : 사용자별 전체 계좌 조회
+            <BulletPoint>&#9679;</BulletPoint> 기능 : 예금주별 계좌 목록 조회
           </ListItem>
           <ListItem>
             <BulletPoint>&#9679;</BulletPoint> 메서드 : GET

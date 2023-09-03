@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 function AccountList() {
   return (
     <AccountListContainer>
-      <AccountListTitle>계좌 생성하기</AccountListTitle>
+      <AccountListTitle>계좌 생성</AccountListTitle>
       <AccountListDetail>기본 정보</AccountListDetail>
       <AccountListDetailContent>
         <ul>

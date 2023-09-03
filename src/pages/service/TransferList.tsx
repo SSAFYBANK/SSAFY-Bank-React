@@ -3,12 +3,12 @@ import styled from "@emotion/styled";
 function AccountList() {
   return (
     <AccountListContainer>
-      <AccountListTitle>거래 내역 조회</AccountListTitle>
+      <AccountListTitle>이체내역 조회</AccountListTitle>
       <AccountListDetail>기본 정보</AccountListDetail>
       <AccountListDetailContent>
         <ul>
           <ListItem>
-            <BulletPoint>&#9679;</BulletPoint> 기능 : 거래 내역 조회
+            <BulletPoint>&#9679;</BulletPoint> 기능 : 이체내역 조회
           </ListItem>
           <ListItem>
             <BulletPoint>&#9679;</BulletPoint> 메서드 : POST

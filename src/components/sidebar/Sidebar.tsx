@@ -74,7 +74,7 @@ const Sidebar = React.memo(() => {
                             routeTo("/");
                         }}
                     >
-                        계좌 등록
+                        계좌 생성
                     </SmallContent>
                     <SmallContent
                         active={activeMenu === "/"}
