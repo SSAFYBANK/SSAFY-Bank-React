@@ -33,8 +33,7 @@ const FooterContainer = styled("div")`
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    bottom: 0;
+    margin-top: 20;
     width: 100%;
     height: 5em;
     border-top: solid 1px ${faintgray};

@@ -3,11 +3,12 @@ import styled from "@emotion/styled";
 import Theme from "@assets/styles/Theme";
 import Header from "@components/header/Header";
 import Footer from "@components/footer/Footer";
+import Sidebar from "@/components/sidebar/Sidebar";
 
 // ----------------------------------------------------------------------------------------------------
 
 /* Variables */
-const { tertiary, distinctgray } = Theme.colors;
+const { secondary, distinctgray } = Theme.colors;
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -22,7 +23,12 @@ function Service() {
                     SSAFY Bank 오픈 API를 이용해 창의적인 애플리케이션을 제작해 보세요.
                 </DescWrapper>
             </TitleBox>
-            <div>서비스 페이지입니다.</div>
+            <WrapSideBar>
+                <Sidebar></Sidebar>
+                <Content>
+                    <div>서비스 페이지입니다.</div>
+                </Content>
+            </WrapSideBar>
             <Footer />
         </ServiceContainer>
     );
@@ -47,7 +53,7 @@ const TitleBox = styled("div")`
     align-items: center;
     width: 100%;
     height: 25vh;
-    background-color: ${tertiary};
+    background-color: ${secondary};
     color: ${distinctgray};
 `;
 
@@ -61,6 +67,14 @@ const TitleWrapper = styled("div")`
 const DescWrapper = styled("div")`
     font-size: 20px;
     font-weight: 500;
+`;
+
+const WrapSideBar = styled("div")`
+    display: flex;
+    width: 100%;
+`;
+const Content = styled("div")`
+    width: 100%;
 `;
 
 // ----------------------------------------------------------------------------------------------------
