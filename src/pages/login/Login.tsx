@@ -6,8 +6,8 @@ import Theme from "@assets/styles/Theme";
 import useRouter from "@hooks/useRouter";
 import Header from "@components/header/Header";
 import axios from "axios";
-import KakaoTalkLogoBlack from "@assets/images/Kakaotalk-Logo-Black.png";
-import KakaoTalkLogoWhite from "@assets/images/Kakaotalk-Logo-White.png";
+import KakaoTalkLogoBlack from "@assets/images/KakaoTalk-Logo-Black.png";
+import KakaoTalkLogoWhite from "@assets/images/KakaoTalk-Logo-White.png";
 
 // ----------------------------------------------------------------------------------------------------
 
