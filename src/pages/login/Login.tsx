@@ -24,7 +24,7 @@ function Login() {
 
     const authenticateUser = (code: string) => {
         axios
-            .post("http://localhost:8081/auth/login", { code })
+            .post("http://52.78.102.165:8081/auth/login", { code })
             .then((response) => {
                 console.log(response.data);
                 const authToken = response.headers["authorization"];
