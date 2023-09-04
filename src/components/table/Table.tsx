@@ -6,12 +6,12 @@ import { TableProps } from "@/customTypes/PropsTypes";
 // ----------------------------------------------------------------------------------------------------
 
 /* Varables */
-const { primary, whitegray, faintgray } = Theme.colors;
+const { faintgray, distinctgray, tableheader } = Theme.colors;
 
 // ----------------------------------------------------------------------------------------------------
 
 /* Table Component */
-function Table({ headers, contents }: TableProps) {
+function Table({ headers, contents, align }: TableProps) {
     return (
         <TableWrapper>
             <thead>
@@ -23,7 +23,7 @@ function Table({ headers, contents }: TableProps) {
             </thead>
             <tbody>
                 {contents.map((row, rowIndex) => (
-                    <TableRow key={rowIndex}>
+                    <TableRow key={rowIndex} align={align}>
                         {row.map((cell, cellIndex) => (
                             <TableCell key={cellIndex}>{cell}</TableCell>
                         ))}
@@ -39,34 +39,35 @@ function Table({ headers, contents }: TableProps) {
 /* Styles */
 const TableWrapper = styled("table")`
     border-collapse: collapse;
+    border-radius: 10px;
     width: 100%;
-
 `;
 
 const TableHeader = styled("th")`
     padding: 10px;
-    background-color: #d0dceb;
-    border-bottom: 1px solid ${faintgray}; // 바텀에만 보더 추가
+    background-color: ${tableheader};
+    border-bottom: 1px solid ${faintgray};
     text-align: center;
     font-weight: 700;
     font-size: 18px;
     color: white;
 `;
 
-const TableRow = styled("tr")`
-text-align:center;
+const TableRow = styled("tr")<{ align?: string }>`
+    text-align: ${(props) => props.align || "left"};
+    &:hover {
+        background-color: ${distinctgray};
+        color: white;
+    }
 `;
 
 const TableCell = styled("td")`
     padding: 10px;
-    border-bottom: 1px solid ${faintgray};  // 바텀에만 보더 추가
-    text-align:center;
+    border-bottom: 1px solid ${faintgray};
     &:nth-child(1) {
         font-weight: 700;
-        
     }
 `;
-
 
 // ----------------------------------------------------------------------------------------------------
 

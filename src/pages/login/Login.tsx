@@ -6,14 +6,13 @@ import Theme from "@assets/styles/Theme";
 import useRouter from "@hooks/useRouter";
 import Header from "@components/header/Header";
 import axios from "axios";
-import Footer from "@components/footer/Footer";
 import KakaoTalkLogoBlack from "@assets/images/Kakaotalk-Logo-Black.png";
 import KakaoTalkLogoWhite from "@assets/images/Kakaotalk-Logo-White.png";
 
 // ----------------------------------------------------------------------------------------------------
 
 /* Variables */
-const { primary, kakaotalk } = Theme.colors;
+const { primary, secondary, kakaotalk } = Theme.colors;
 const { VITE_KAKAO_CLIENT_ID, VITE_KAKAO_REDIRECT_URI } = import.meta.env;
 
 // ----------------------------------------------------------------------------------------------------
@@ -70,7 +69,6 @@ function Login() {
                     카카오톡 로그인
                 </LoginButton>
             </LoginBox>
-            <Footer />
         </LoginContainer>
     );
 }
@@ -94,7 +92,7 @@ const TitleBox = styled("div")`
     align-items: center;
     width: 100%;
     height: 25vh;
-    background-color: ${primary};
+    background-color: ${secondary};
     color: white;
 `;
 

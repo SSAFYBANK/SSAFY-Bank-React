@@ -20,20 +20,13 @@ const getAccountList = async ({ responseFunc, data, routeTo }: ApiProps) => {
 };
 
 /* Delete Account */
-const deleteAccount = async ({ responseFunc, data, routeTo }) => {
+const deleteAccount = async ({ responseFunc, data, routeTo }: ApiProps) => {
     try {
-        const { source, target, text } = data;
-        const queryParams = {
-            source,
-            target,
-            text,
-        };
         const response = await instance.get(`/v1/account/getAccountList/0`);
         processApiResponse({ responseFunc, response });
         return response;
     } catch (e) {
-        routeTo("/error");
-        return e.response;
+        console.log("오류 발생!:" + e);
     }
 };
 

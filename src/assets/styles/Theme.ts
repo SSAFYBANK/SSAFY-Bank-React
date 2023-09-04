@@ -11,6 +11,7 @@ type Theme = {
         faintgray: string;
         distinctgray: string;
         kakaotalk: string;
+        tableheader: string;
     };
 };
 
@@ -20,12 +21,13 @@ const theme: Theme = {
         primarydeep: "#1281FF",
         primarydeeper: "#1140F5",
         primarydark: "#0D5069",
-        secondary: "#11F5B5",
+        secondary: "#1481A8",
         tertiary: "#12FEFF",
         whitegray: "#F2F2F2",
         faintgray: "#CCCDCF",
         distinctgray: "#392F31",
         kakaotalk: "#FAE100",
+        tableheader: "#445182",
     },
 };
 

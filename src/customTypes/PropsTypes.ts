@@ -1,5 +1,6 @@
 /* Import */
 import { ResponseFuncType } from "@customTypes/ResponseFuncType";
+import { AxiosResponse } from "axios";
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -7,6 +8,7 @@ import { ResponseFuncType } from "@customTypes/ResponseFuncType";
 export interface TableProps {
     headers: string[];
     contents: any[][];
+    align?: string;
 }
 
 export interface MenuBarProps {
@@ -18,4 +20,9 @@ export interface ApiProps {
     responseFunc: ResponseFuncType;
     data: { [key: string]: any };
     routeTo: (path: string) => void;
+}
+
+export interface ProcessApiProps {
+    responseFunc: ResponseFuncType;
+    response: AxiosResponse;
 }

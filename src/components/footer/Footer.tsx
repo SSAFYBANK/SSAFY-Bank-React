@@ -18,7 +18,7 @@ function Footer() {
                 <Logo src={LogoImage} alt="싸피뱅크 로고" />
             </LogoWrapper>
             <FooterContent>
-                Copyright 2023. <span>Park Hyun-cheol, Oh Yoo-jeong, Go Geon</span>. All Rights
+                Copyright 2023. <span>Park Hyun-cheol, Oh You-jung, Go Geon</span>. All Rights
                 Reserved.
             </FooterContent>
         </FooterContainer>
@@ -33,7 +33,7 @@ const FooterContainer = styled("div")`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20;
+    padding-top: 0.5vh;
     width: 100%;
     height: 5em;
     border-top: solid 1px ${faintgray};

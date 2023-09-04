@@ -1,14 +1,10 @@
 /* Import */
-import { AxiosResponse } from "axios";
-import { ResponseFuncType } from "@customTypes/ResponseFuncType";
+import { ProcessApiProps } from "@/customTypes/PropsTypes";
 
 // ----------------------------------------------------------------------------------------------------
 
 /* API Response Process Function */
-async function processApiResponse(
-    { responseFunc }: { responseFunc: ResponseFuncType },
-    { response }: { response: AxiosResponse },
-) {
+async function processApiResponse({ responseFunc, response }: ProcessApiProps) {
     // Process the Case No Data in Response
     if (!response || !("data" in response)) return;
 

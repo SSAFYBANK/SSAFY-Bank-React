@@ -66,6 +66,26 @@ const GlobalStyle = css`
         font-size: 16px;
     }
 
+    ::-webkit-scrollbar-track {
+        margin-top: 10px;
+        border-radius: 10px;
+        background-color: transparent;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+        padding-right: 5px;
+        background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-clip: padding-box;
+        background-color: hsla(0, 0%, 42%, 0.29);
+        border: 3px solid transparent;
+    }
+    ::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+
     html,
     body,
     div,

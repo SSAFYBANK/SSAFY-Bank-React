@@ -2,14 +2,13 @@
 import styled from "@emotion/styled";
 import Theme from "@assets/styles/Theme";
 import Header from "@components/header/Header";
-import Footer from "@components/footer/Footer";
 import Sidebar from "@/components/sidebar/Sidebar";
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 
 // ----------------------------------------------------------------------------------------------------
 
 /* Variables */
-const { secondary, distinctgray } = Theme.colors;
+const { secondary } = Theme.colors;
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -25,12 +24,11 @@ function Service() {
                 </DescWrapper>
             </TitleBox>
             <WrapSideBar>
-                <Sidebar></Sidebar>
+                <Sidebar />
                 <Content>
-                <Outlet />
+                    <Outlet />
                 </Content>
             </WrapSideBar>
-            <Footer />
         </ServiceContainer>
     );
 }
@@ -55,7 +53,7 @@ const TitleBox = styled("div")`
     width: 100%;
     height: 25vh;
     background-color: ${secondary};
-    color: ${distinctgray};
+    color: white;
 `;
 
 const TitleWrapper = styled("div")`
@@ -74,12 +72,13 @@ const WrapSideBar = styled("div")`
     display: flex;
     width: 100%;
 `;
+
 const Content = styled("div")`
     width: 100%;
     margin-top: 60px;
-      height: 100vh; // 원하는 높이로 설정
-    overflow-y: auto; // 스크롤이 필요한 경우에만 y축 스크롤 표시
-    scrollbar-width: none; // Firefox를 위한 설정
+    height: 100vh; // 원하는 높이로 설정
+    overflow-y: auto;
+    scrollbar-width: none;
     &::-webkit-scrollbar {
         display: none; // Chrome, Safari를 위한 설정
     }

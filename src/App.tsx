@@ -2,6 +2,7 @@
 import router from "@/router";
 import styled from "@emotion/styled";
 import { RouterProvider } from "react-router-dom";
+import Footer from "./components/footer/Footer";
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -10,6 +11,7 @@ function App() {
     return (
         <MainContainer>
             <RouterProvider router={router} />
+            <Footer />
         </MainContainer>
     );
 }
@@ -19,7 +21,6 @@ function App() {
 /* Style */
 const MainContainer = styled("div")`
     width: 100%;
-    height: 100%;
 `;
 
 // ----------------------------------------------------------------------------------------------------

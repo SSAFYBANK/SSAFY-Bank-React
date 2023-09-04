@@ -23,6 +23,7 @@ const Header = React.memo(() => {
         routeTo("/");
     };
 
+    // MyApi Menu Click
     const handleMyApiClick = () => {
         if (authToken) {
             routeTo("/info");
@@ -43,7 +44,9 @@ const Header = React.memo(() => {
                     <MenuButton onClick={() => routeTo("/login")}>로그인</MenuButton>
                 )}
                 <MenuButton onClick={() => routeTo("/")}>서비스 소개</MenuButton>
-                <MenuButton onClick={() => routeTo("/service")}>API 소개</MenuButton>
+                <MenuButton onClick={() => routeTo("/service/account-holder-create")}>
+                    API 소개
+                </MenuButton>
                 <MenuButton onClick={handleMyApiClick}>나의 API</MenuButton>
             </NavigationBar>
         </HeaderContainer>
