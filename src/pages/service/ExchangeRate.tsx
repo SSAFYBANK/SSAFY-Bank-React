@@ -100,20 +100,20 @@ function AccountList() {
           </tr>
           <tr>
             <td>exchangeDate</td>
-            <td>검색일</td>
+            <td>고시일</td>
             <td>날짜(YY-mm-dd)</td>
             <td>O</td>
           </tr>
           <tr>
             <td>buyExchange</td>
-            <td>전산환(송금) 보낼때</td>
-            <td>숫자</td>
+            <td>전산환(송금) 시</td>
+            <td>원화로 외화를 구매할 때 사용</td>
             <td>O</td>
           </tr>
           <tr>
             <td>sellExchange</td>
-            <td>종료일</td>
-            <td>숫자</td>
+            <td>전산환(출금) 시</td>
+            <td>외화를 원화로 판매할 때 사용</td>
             <td>O</td>
           </tr>
           <tr>

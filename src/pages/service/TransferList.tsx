@@ -140,7 +140,7 @@ function AccountList() {
           {`
     {
       "accountNum" : "1234567890123" 
-      "accountPass" : "1234" 
+      "accountPassword" : "1234" 
     }
 
           `}

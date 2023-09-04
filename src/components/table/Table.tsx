@@ -40,12 +40,13 @@ function Table({ headers, contents }: TableProps) {
 const TableWrapper = styled("table")`
     border-collapse: collapse;
     width: 100%;
+
 `;
 
 const TableHeader = styled("th")`
     padding: 10px;
-    background-color: ${primary};
-    border: 1px solid ${faintgray};
+    background-color: #d0dceb;
+    border-bottom: 1px solid ${faintgray}; // 바텀에만 보더 추가
     text-align: center;
     font-weight: 700;
     font-size: 18px;
@@ -53,19 +54,19 @@ const TableHeader = styled("th")`
 `;
 
 const TableRow = styled("tr")`
-    &:nth-of-type(odd) {
-        background-color: ${whitegray};
-    }
+text-align:center;
 `;
 
 const TableCell = styled("td")`
     padding: 10px;
-    border: 1px solid ${faintgray};
-    text-align: left;
+    border-bottom: 1px solid ${faintgray};  // 바텀에만 보더 추가
+    text-align:center;
     &:nth-child(1) {
         font-weight: 700;
+        
     }
 `;
+
 
 // ----------------------------------------------------------------------------------------------------
 

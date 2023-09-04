@@ -26,7 +26,7 @@ const serviceList: TableProps = {
         ["이체내역 조회", "특정 계좌의 이체내역 조회"],
         ["이체내역 삭제", "특정 이체내역 삭제, 삭제된 거래내역은 더 이상 조회 불가"],
         ["은행 전체 목록", "모든 은행 목록 조회"],
-        ["환율 조회", "통화와 날짜를 선택하여 환율 정보 조회"],
+        ["환율 조회", "매일(09시) 업데이트 되는 환율 정보 조회"],
     ],
 };
 
@@ -75,7 +75,9 @@ const TitleBox = styled("div")`
 `;
 
 const TableWrapper = styled("div")`
-    width: 50%;
+    margin-top:60px;
+    margin-bottom:60px;
+    width: 60%;
 `;
 
 const TitleWrapper = styled("div")`

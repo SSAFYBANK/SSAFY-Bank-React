@@ -4,6 +4,7 @@ import Theme from "@assets/styles/Theme";
 import Header from "@components/header/Header";
 import Footer from "@components/footer/Footer";
 import Sidebar from "@/components/sidebar/Sidebar";
+import { Outlet } from 'react-router-dom';
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -26,7 +27,7 @@ function Service() {
             <WrapSideBar>
                 <Sidebar></Sidebar>
                 <Content>
-                    <div>서비스 페이지입니다.</div>
+                <Outlet />
                 </Content>
             </WrapSideBar>
             <Footer />
@@ -75,6 +76,13 @@ const WrapSideBar = styled("div")`
 `;
 const Content = styled("div")`
     width: 100%;
+    margin-top: 60px;
+      height: 100vh; // 원하는 높이로 설정
+    overflow-y: auto; // 스크롤이 필요한 경우에만 y축 스크롤 표시
+    scrollbar-width: none; // Firefox를 위한 설정
+    &::-webkit-scrollbar {
+        display: none; // Chrome, Safari를 위한 설정
+    }
 `;
 
 // ----------------------------------------------------------------------------------------------------
