@@ -34,7 +34,7 @@ function Info() {
     async function fetchData() {
         try {
           const token = sessionStorage.getItem("Authorization");
-          const response = await axios.get("http://localhost:8081/v1/account-holder/getList", {
+          const response = await axios.get("http://52.78.102.165:8081/v1/account-holder/getList", {
             headers: {
               'Authorization': token  // 헤더에 토큰 정보 추가
             }
@@ -63,7 +63,7 @@ function Info() {
       async function fetchAccountDetails(uuid: string) {
         try {
           const token = sessionStorage.getItem("Authorization");
-          const response = await axios.get(`http://localhost:8081/v1/account/getHolderAccountList/${uuid}/0`, {
+          const response = await axios.get(`http://52.78.102.165:8081/v1/account/getHolderAccountList/${uuid}/0`, {
             headers: {
               'Authorization': token
             }
@@ -101,7 +101,7 @@ function Info() {
       const handleAddAccountHolder = async () => {
         try {
           const response = await axios.post(
-            'http://localhost:8081/v1/account-holder/create', // 실제 API 주소로 변경
+            'http://52.78.102.165:8081/v1/account-holder/create', // 실제 API 주소로 변경
             {
               accountHolderName: accountHolderName // 실제로는 사용자 입력 값을 넣어야 함
             },
@@ -144,7 +144,7 @@ const handleDeleteAccountHolder = async () => {
         console.log(modalUuid);
       if (modalUuid) {
         const response = await axios.post(
-          'http://localhost:8081/v1/account-holder/delete',
+          'http://52.78.102.165:8081/v1/account-holder/delete',
           {
             accountHolderName: modalHolderName,
             accountHolderToken: modalUuid,
@@ -185,7 +185,7 @@ const handleShowCreateModal = (uuid: string) => {
     try {
       const token = sessionStorage.getItem('Authorization');
       const response = await axios.post(
-        'http://localhost:8081/v1/account/create',
+        'http://52.78.102.165:8081/v1/account/create',
         {
           bankCode: bankCode,
           accountHolderUuid: modalUuid,
@@ -247,7 +247,7 @@ const handleShowTransferModal = (accountNum: string, accountHolderUuid: string) 
     try {
       const token = sessionStorage.getItem('Authorization');
       const response = await axios.post(
-        'http://localhost:8081/v1/account/delete',
+        'http://52.78.102.165:8081/v1/account/delete',
         {
             bankCode: bankCode,
             accountHolderUuid: modalUuid,
@@ -291,7 +291,7 @@ const handleShowTransferModal = (accountNum: string, accountHolderUuid: string) 
     try {
       const token = sessionStorage.getItem('Authorization');
       const response = await axios.post(
-        'http://localhost:8081/v1/transfer/deposit',
+        'http://52.78.102.165:8081/v1/transfer/deposit',
         {
             senderAccountNum : ModalAccount,
             senderAccountPassword :accountPassword ,
@@ -350,7 +350,7 @@ const [transferHistory, setTransferHistory] = useState<Array<{
     try {
       const token = sessionStorage.getItem("Authorization");
       const response = await axios.post(
-        `http://localhost:8081/v1/transfer/getList/${page}`,
+        `http://52.78.102.165:8081/v1/transfer/getList/${page}`,
         {
             accountNum : ModalAccount,
             accountPassword : accountPassword

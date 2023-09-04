@@ -22,7 +22,7 @@ function InfoKey() {
         try {
             const oldToken = sessionStorage.getItem("Authorization");
             const response = await axios.post(
-                `http://localhost:8081/v1/member/reissue`,
+                `http://52.78.102.165:8081/v1/member/reissue`,
                 {},
                 {
                     headers: {
