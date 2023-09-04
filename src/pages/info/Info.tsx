@@ -13,7 +13,7 @@ import Modal4 from "@components/modal/Modal4";
 // ----------------------------------------------------------------------------------------------------
 
 /* Variables */
-const { secondary } = Theme.colors;
+const { primary, primarydark, secondary } = Theme.colors;
 
 // ----------------------------------------------------------------------------------------------------
 interface AccountDetail {
@@ -66,7 +66,7 @@ function Info() {
         try {
             const token = sessionStorage.getItem("Authorization");
             const response = await axios.get(
-                `hhttp://52.78.102.165:8081/v1/account/getHolderAccountList/${uuid}/0`,
+                `http://52.78.102.165:8081/v1/account/getHolderAccountList/${uuid}/0`,
                 {
                     headers: {
                         Authorization: token,
@@ -402,7 +402,7 @@ function Info() {
             </TitleBox>
             <InfoKey />
             <ContainerTitleWrapper>
-                <CenterText>예금주 목록(최대 3명 등록가능)</CenterText>
+                <CenterText>예금주 목록 - 최대 3명 등록 가능</CenterText>
                 <InputBox
                     type="text"
                     placeholder="예금주 이름을 입력하세요."
@@ -623,14 +623,14 @@ function Info() {
                     </div>
                     <div>
                         <div>
-                            <TransactionLabel>검색결과:</TransactionLabel>
+                            <TransactionLabel>검색 결과:</TransactionLabel>
                             <TransactionData>{pageInfo.totalCnt}</TransactionData>
                         </div>
                         <div>
                             <TransactionLabel>다음 페이지 여부:</TransactionLabel>
                             <TransactionData>{pageInfo.next ? "Yes" : "No"}</TransactionData>
                         </div>
-                        <h3>거래 내역</h3>
+                        <h3>거래 내역 : 갱신을 위해 반드시 '보기'를 눌러주세요!</h3>
                         <div>
                             {transferHistory.map((item, index) => (
                                 <TransactionItem key={index}>
@@ -740,6 +740,7 @@ const AccountInfo = styled.div`
     margin-bottom: 15px;
     width: 100%;
 `;
+
 const AccountInfoOne = styled.div`
     display: flex;
     justify-content: space-evenly;
@@ -747,33 +748,39 @@ const AccountInfoOne = styled.div`
     align-items: center;
 `;
 
-const DetailsDiv = styled.div`
-    background-color: #ccc;
-    color: white;
-    padding: 10px 20px;
+const DetailsDiv = styled("button")`
     cursor: pointer;
-    border-radius: 4px;
-
+    margin-top: 3vh;
+    padding: 1.5vh 3vh;
+    background-color: ${primarydark};
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    color: white;
     &:hover {
-        background-color: #aaa;
+        background-color: ${secondary};
     }
 `;
-const DetailsDiv2 = styled.span`
-    background-color: #ccc;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
 
+const DetailsDiv2 = styled("button")`
+    cursor: pointer;
+    padding: 1.5vh 3vh;
+    background-color: ${primarydark};
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    color: white;
     &:hover {
-        background-color: #aaa;
+        background-color: ${secondary};
     }
 `;
-const WarpBtnModal = styled.div`
+
+const WarpBtnModal = styled("div")`
     justify-content: space-evenly;
     margin-top: 57px;
     display: flex;
 `;
+
 const TextModal = styled.div`
     font-size: 20px;
     font-weight: 600;
@@ -800,14 +807,15 @@ const WrapModal2 = styled.div`
 `;
 
 const AddButton = styled.div`
-    background-color: #ccc;
+    background-color: ${primarydark};
     color: white;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
     margin-left: 20px;
+    font-weight: 700;
     &:hover {
-        background-color: #aaa;
+        background-color: ${primary};
     }
 `;
 

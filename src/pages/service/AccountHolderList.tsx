@@ -14,7 +14,8 @@ function AccountList() {
                         <BulletPoint>&#9679;</BulletPoint> 메서드 : GET
                     </ListItem>
                     <ListItem>
-                        <BulletPoint>&#9679;</BulletPoint> 호출경로 : v1/account-holder/getList
+                        <BulletPoint>&#9679;</BulletPoint> 호출경로 :
+                        http://www.ssafybank.com:8081/v1/account-holder/getList
                     </ListItem>
                     <ListItem>
                         <BulletPoint>&#9679;</BulletPoint> 호출결과 : JSON

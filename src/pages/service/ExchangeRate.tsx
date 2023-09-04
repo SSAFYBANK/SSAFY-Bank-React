@@ -52,7 +52,8 @@ function AccountList() {
                         <BulletPoint>&#9679;</BulletPoint> 메서드 : GET
                     </ListItem>
                     <ListItem>
-                        <BulletPoint>&#9679;</BulletPoint> 호출정보 : v1/exchangeRate/search
+                        <BulletPoint>&#9679;</BulletPoint> 호출정보 :
+                        http://www.ssafybank.com:8081/v1/exchangeRate/search
                     </ListItem>
                     <ListItem>
                         <BulletPoint>&#9679;</BulletPoint> 호출결과 : JSON

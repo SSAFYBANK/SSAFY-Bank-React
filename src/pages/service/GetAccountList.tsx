@@ -15,7 +15,8 @@ function AccountList() {
                     </ListItem>
                     <ListItem>
                         <BulletPoint>&#9679;</BulletPoint> 호출정보 :
-                        v1/account/getAccountList/&#123;페이지 번호 - 시작 번호: 0&#125;
+                        http://www.ssafybank.com:8081/v1/account/getAccountList/&#123;페이지 번호 -
+                        시작 번호: 0&#125;
                     </ListItem>
                     <ListItem>
                         <BulletPoint>&#9679;</BulletPoint> 호출결과 : JSON

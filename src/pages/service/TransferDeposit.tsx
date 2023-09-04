@@ -14,7 +14,8 @@ function AccountList() {
                         <BulletPoint>&#9679;</BulletPoint> 메서드 : POST
                     </ListItem>
                     <ListItem>
-                        <BulletPoint>&#9679;</BulletPoint> 호출경로 : v1/transfer/deposit
+                        <BulletPoint>&#9679;</BulletPoint> 호출경로 :
+                        http://www.ssafybank.com:8081/v1/transfer/deposit
                     </ListItem>
                     <ListItem>
                         <BulletPoint>&#9679;</BulletPoint> 호출결과 : JSON

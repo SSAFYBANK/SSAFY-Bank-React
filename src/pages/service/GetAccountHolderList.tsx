@@ -15,8 +15,8 @@ function AccountList() {
                     </ListItem>
                     <ListItem>
                         <BulletPoint>&#9679;</BulletPoint> 호출정보 :
-                        v1/account/getHolderAccountList/&#123;예금주 UUID&#125;/&#123;페이지 번호 -
-                        시작 번호: 0&#125;
+                        http://www.ssafybank.com:8081/v1/account/getHolderAccountList/&#123;예금주
+                        UUID&#125;/&#123;페이지 번호 - 시작 번호: 0&#125;
                     </ListItem>
                     <ListItem>
                         <BulletPoint>&#9679;</BulletPoint> 호출결과 : JSON

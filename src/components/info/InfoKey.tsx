@@ -1,13 +1,13 @@
 /* Import */
 import styled from "@emotion/styled";
 import Theme from "@assets/styles/Theme";
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 // ----------------------------------------------------------------------------------------------------
 
 /* Variables */
-const { primary, whitegray } = Theme.colors;
+const { secondary, distinctgray, primarydark } = Theme.colors;
 
 // ----------------------------------------------------------------------------------------------------
 
@@ -26,35 +26,33 @@ function InfoKey() {
                 {},
                 {
                     headers: {
-                        'Authorization': oldToken
-                    }
-                }
+                        Authorization: oldToken,
+                    },
+                },
             );
 
             if (response.data.code === 1) {
                 const newToken = response.data.data;
                 sessionStorage.setItem("Authorization", newToken);
-                setToken(newToken);  // 상태 업데이트로 재랜더링을 유발
+                setToken(newToken); // 상태 업데이트로 재랜더링을 유발
             }
-
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 if (error.response?.data.code === -1) {
                     alert(error.response.data.msg);
                 }
             }
-            console.error('An error occurred:', error);
+            console.error("An error occurred:", error);
         }
     }
     return (
         <>
-        <InfoKeyContainer>
-            <SubTitleWrapper>나의 API 키 확인</SubTitleWrapper>
-            <KeyHeader>나의 API 키</KeyHeader>
-            <KeyWrapper>{token}</KeyWrapper>
-         <DetailsDiv2 onClick={reIssueToken}>재발급</DetailsDiv2>
-        </InfoKeyContainer>
-         </>
+            <InfoKeyContainer>
+                <SubTitleWrapper>사용자 AccessToken</SubTitleWrapper>
+                <KeyWrapper>{token}</KeyWrapper>
+                <ReissueButton onClick={reIssueToken}>토큰 재발급</ReissueButton>
+            </InfoKeyContainer>
+        </>
     );
 }
 
@@ -77,36 +75,32 @@ const SubTitleWrapper = styled("div")`
     font-weight: 700;
 `;
 
-const KeyHeader = styled("div")`
-    display: flex;
-    box-sizing: border-box;
-    justify-content: center;
-    padding: 3vh;
-    width: 50%;
-    background-color: ${primary};
-    color: white;
-    font-size: 20px;
-    font-weight: 700;
-`;
-
 const KeyWrapper = styled("div")`
-    width: 50%;
+    display: block;
     box-sizing: border-box;
+    width: 50%;
     padding: 3vh;
     word-wrap: break-word;
-    background-color: ${whitegray};
+    border-radius: 10px;
+    background-color: ${distinctgray};
+    color: white;
+    font-family: Consolas, monospace;
+    font-size: 16px;
+    line-height: 1.5;
 `;
-const DetailsDiv2 = styled.span`
-margin-top : 20px;
-  background-color: #ccc;
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 4px;
 
-  &:hover {
-    background-color: #aaa;
-  }
+const ReissueButton = styled("button")`
+    cursor: pointer;
+    margin-top: 3vh;
+    padding: 1.5vh 3vh;
+    background-color: ${primarydark};
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    color: white;
+    &:hover {
+        background-color: ${secondary};
+    }
 `;
 
 // ----------------------------------------------------------------------------------------------------

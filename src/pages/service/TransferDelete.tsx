@@ -11,10 +11,11 @@ function AccountList() {
                         <BulletPoint>&#9679;</BulletPoint> 기능 : 이체 내역 삭제
                     </ListItem>
                     <ListItem>
-                        <BulletPoint>&#9679;</BulletPoint> 메서드 : HTTPS-DELETE
+                        <BulletPoint>&#9679;</BulletPoint> 메서드 : DELETE
                     </ListItem>
                     <ListItem>
-                        <BulletPoint>&#9679;</BulletPoint> 호출경로 : v1/transfer/delete
+                        <BulletPoint>&#9679;</BulletPoint> 호출경로 :
+                        http://www.ssafybank.com:8081/v1/transfer/delete
                     </ListItem>
                     <ListItem>
                         <BulletPoint>&#9679;</BulletPoint> 호출결과 : JSON
