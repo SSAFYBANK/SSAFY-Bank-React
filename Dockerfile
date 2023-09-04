@@ -9,12 +9,7 @@ RUN npm run build
 # 실행 스테이지
 FROM node:lts
 WORKDIR /app
+RUN npm install -g serve
 COPY --from=build /app/build ./build
-COPY package*.json ./
-COPY server.js .
-RUN npm install express
 
-ENV PORT=5173
-EXPOSE 5173
-
-CMD ["node", "server.js"]
+CMD ["serve", "-s", "build", "-l", "5173"]
