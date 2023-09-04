@@ -14,7 +14,7 @@ COPY package*.json ./
 COPY server.js .
 RUN npm install express
 
-ENV PORT=3000
-EXPOSE 3000
+ENV PORT=5173
+EXPOSE 5173
 
 CMD ["node", "server.js"]
