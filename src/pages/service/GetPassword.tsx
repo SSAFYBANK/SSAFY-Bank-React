@@ -113,7 +113,7 @@ function AccountList() {
                 <Code>
                     {`
     {
-      "accountNum": "1234567890123" 
+      "accountNum": "1234567890123", 
       "accountHolderUuid": "abcdefg-1234-5678-9100-1234a56789cd" 
     }
 
