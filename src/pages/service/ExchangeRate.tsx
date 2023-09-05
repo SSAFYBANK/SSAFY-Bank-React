@@ -49,7 +49,7 @@ function AccountList() {
                         <BulletPoint>&#9679;</BulletPoint> 기능 : 통화별 환율 조회
                     </ListItem>
                     <ListItem>
-                        <BulletPoint>&#9679;</BulletPoint> 메서드 : GET
+                        <BulletPoint>&#9679;</BulletPoint> 메서드 : POST
                     </ListItem>
                     <ListItem>
                         <BulletPoint>&#9679;</BulletPoint> 호출정보 :
